@@ -149,9 +149,13 @@ Deploy via Vercel Dashboard (Recommended)
 2. **Configure DNS:**
    - Vercel will provide DNS records to add at your domain provider
    - Add the A and/or CNAME records as instructed
-     | **A** | `@` | `216.198.79.1` |
+
+     | Type      | Name  | Value                                  |
+     | :-------- | :---- | :------------------------------------- |
+     | **A**     | `@`   | `216.198.79.1`                         |
      | **CNAME** | `www` | `5604ca6c091bce47.vercel-dns-017.com.` |
-   - DNS propagation may take a few minutes to 24 hours
+
+- DNS propagation may take a few minutes to 24 hours
 
 3. **SSL Certificate:**
    - Vercel automatically provisions SSL certificates via Let's Encrypt

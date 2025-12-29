@@ -2,7 +2,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-import { COMPANY_EMAIL, GMAIL_USER, GMAIL_PASS } from "@/lib/constants";
+import { COMPANY_EMAIL, GMAIL_USER, GMAIL_PASS, COMPANY_NAME } from "@/lib/constants";
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -17,14 +17,15 @@ export async function POST(request: Request) {
 
   try {
     await transporter.sendMail({
-      from: GMAIL_USER,
-      to: COMPANY_EMAIL,
+      from: `"${COMPANY_NAME}" <${COMPANY_EMAIL}>`,
+      to: `"${COMPANY_NAME}" <${COMPANY_EMAIL}>`,
       cc: email,
       replyTo: email,
-      subject: `Query from ${name}: ${subject}`,
+      subject: `Enquiry from ${name}: ${subject}`,
       text: message,
       html: `
-        <p><strong>From:</strong> ${name} (${email})</p>
+<h3>Enquiry: ${subject}</h3>
+      <p><strong>From:</strong> ${name} (${email})</p>
         <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
         <p>${message}</p>

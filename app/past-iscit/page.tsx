@@ -147,7 +147,7 @@ export default function PastIscitPage() {
         <table className="w-full table-auto border-collapse">
           <tbody>
             {sortedPastISCITs.map((event) => (
-              <tr key={event.code} className="odd:bg-teal-100 even:bg-white">
+              <tr key={event.code} className="table-row">
                 <td className="px-4 py-2 font-sans align-top font-bold">{event.code}</td>
                 <td className="px-4 py-2 font-sans">{event.description}</td>
               </tr>

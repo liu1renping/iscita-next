@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -28,11 +29,7 @@ export default function Navbar() {
       role="banner"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 p-2">
-        <Link
-          href="/"
-          className="flex items-center no-underline"
-          onClick={closeMenu}
-        >
+        <Link href="/" className="flex items-center no-underline" onClick={closeMenu}>
           <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-fullr">
             <Image
               src="/icons/iscita-android-icon-512x512.png"
@@ -44,9 +41,7 @@ export default function Navbar() {
             />
           </div>
           <div className="leading-snug ps-1">
-            <div className="text-xl font-extrabold tracking-wide">
-              ISCIT Australia
-            </div>
+            <div className="text-xl font-extrabold tracking-wide">ISCIT Australia</div>
             <div className="text-xs font-light text-teal-100 uppercase tracking-[0.3em]">
               Since 2011
             </div>
@@ -59,9 +54,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               className={`${linkBaseClass} ${
-                isActive(link.href)
-                  ? "bg-teal-500 shadow-lg shadow-black/30"
-                  : ""
+                isActive(link.href) ? "bg-teal-500 shadow-lg shadow-black/30" : ""
               }`}
             >
               {link.label}
@@ -76,29 +69,24 @@ export default function Navbar() {
           >
             Contact
           </Link>
+          <ThemeToggle />
         </nav>
 
-        <button
-          type="button"
-          className="md:hidden flex h-10 w-11 flex-col items-center justify-center gap-1.5 rounded-md border border-teal-50/50 text-teal-50 transition hover:bg-teal-500"
-          aria-label="Toggle navigation menu"
-          aria-expanded={isMenuOpen}
-          onClick={toggleMenu}
-        >
-          <span className="sr-only">Menu</span>
-          <span
-            className="h-0.5 w-6 bg-current transition"
-            aria-hidden="true"
-          />
-          <span
-            className="h-0.5 w-6 bg-current transition"
-            aria-hidden="true"
-          />
-          <span
-            className="h-0.5 w-6 bg-current transition"
-            aria-hidden="true"
-          />
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="flex h-10 w-11 flex-col items-center justify-center gap-1.5 rounded-md border border-teal-50/50 text-teal-50 transition hover:bg-teal-500"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+            onClick={toggleMenu}
+          >
+            <span className="sr-only">Menu</span>
+            <span className="h-0.5 w-6 bg-current transition" aria-hidden="true" />
+            <span className="h-0.5 w-6 bg-current transition" aria-hidden="true" />
+            <span className="h-0.5 w-6 bg-current transition" aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
       {isMenuOpen && (
@@ -112,9 +100,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`${linkBaseClass} ${
-                  isActive(link.href)
-                    ? "bg-teal-500 shadow-lg shadow-black/30"
-                    : ""
+                  isActive(link.href) ? "bg-teal-500 shadow-lg shadow-black/30" : ""
                 }`}
                 onClick={closeMenu}
               >

@@ -67,7 +67,11 @@ export default function AboutUs() {
       <table className="w-full table-auto border-collapse">
         <tbody>
           {hostedConfs.map((conf) => (
-            <tr key={conf.shortName} className="odd:bg-teal-100 even:bg-white">
+            <tr
+              key={conf.shortName}
+              className="table-row"
+              // className="odd:bg-teal-100 even:bg-white dark:odd:bg-teal-900/40 dark:even:bg-slate-800/40"
+            >
               <td className="p-2 font-sans align-top font-bold">{conf.shortName}</td>
               <td className="p-2 font-sans">{conf.confName}</td>
             </tr>

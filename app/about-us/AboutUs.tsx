@@ -51,33 +51,37 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="section-content">
-      <p className="text-lg sm:text-xl">
-        <b>{COMPANY_SHORTNAME}</b> is a not-for-profit association formed in 2011. Registered in New
-        South Wales, {COMPANY_SHORTNAME} acts as a financial and contracting entity for
-        international Engineering and Science conferences in Australia.
-      </p>
-      <p className="text-lg sm:text-xl">
-        Our mission is to support the engineering and scientific community by organizing
-        high-quality conferences that foster knowledge exchange and professional development. To
-        date {COMPANY_SHORTNAME} has run the following conferences in Australia with endorsement
-        from societies including IEEE, IEAust, IEICE:
-      </p>
+    <>
+      <section className="section">
+        <p className="text-lg sm:text-xl">
+          <b>{COMPANY_SHORTNAME}</b> is a not-for-profit association formed in 2011. Registered in
+          New South Wales, {COMPANY_SHORTNAME} acts as a financial and contracting entity for
+          international Engineering and Science conferences in Australia.
+        </p>
+        <p className="text-lg sm:text-xl">
+          Our mission is to support the engineering and scientific community by organizing
+          high-quality conferences that foster knowledge exchange and professional development. To
+          date {COMPANY_SHORTNAME} has run the following conferences in Australia with endorsement
+          from societies including IEEE, IEAust, IEICE:
+        </p>
+      </section>
 
-      <table className="w-full table-auto border-collapse">
-        <tbody>
-          {hostedConfs.map((conf) => (
-            <tr
-              key={conf.shortName}
-              className="table-row"
-              // className="odd:bg-teal-100 even:bg-white dark:odd:bg-teal-900/40 dark:even:bg-slate-800/40"
-            >
-              <td className="p-2 font-sans align-top font-bold">{conf.shortName}</td>
-              <td className="p-2 font-sans">{conf.confName}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </section>
+      <section className="section-content">
+        <table className="w-full table-auto border-collapse">
+          <tbody>
+            {hostedConfs.map((conf) => (
+              <tr
+                key={conf.shortName}
+                className="table-row"
+                // className="odd:bg-teal-100 even:bg-white dark:odd:bg-teal-900/40 dark:even:bg-slate-800/40"
+              >
+                <td className="p-2 font-sans align-top font-bold">{conf.shortName}</td>
+                <td className="p-2 font-sans">{conf.confName}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    </>
   );
 }

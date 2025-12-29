@@ -22,7 +22,7 @@ export default function ContactPage() {
         <ContactForm />
       </section>
 
-      <section className="section-content max-w-3xl">
+      <section className="section-content max-w-3xl mt-2 md:mt-5">
         <h2 className="text-xl md:text-2xl font-semibold">Or Email Us Directly</h2>
         <p className="text-lg">
           For any inquiries or further information, please reach out to us at:{" "}

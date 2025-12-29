@@ -39,21 +39,21 @@ export default function HomePage() {
   return (
     <main className="main-page">
       <h1 className="page-title">Welcome to {COMPANY_NAME}</h1>
-      <section className="section-content">
-        <p className="text-lg md:text-xl">
+      <section className="section">
+        <div className="text-lg md:text-xl ps-2 md:ps-5">
           <b>
             {COMPANY_NAME} ({COMPANY_SHORTNAME}){" "}
           </b>{" "}
           is a financial and contracting entity for international Engineering and Science
           conferences in Australia.
-        </p>
+        </div>
 
         <div className="rounded-xl overflow-hidden">
           <Carousel slides={carouselSlides} autoPlayInterval={5000} />
         </div>
       </section>
 
-      <h2 className="text-center text-2xl md:text-5xl font-bold pt-2 md:pt-5">About Us</h2>
+      <h2 className="page-title">About Us</h2>
       <AboutUs />
     </main>
   );

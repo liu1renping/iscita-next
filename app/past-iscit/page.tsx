@@ -137,13 +137,15 @@ export default function PastIscitPage() {
   return (
     <main className="main-page">
       <h1 className="page-title">Past ISCIT Conferences</h1>
-      <section className="section-content">
+      <section className="section">
         <p className="text-lg md:text-xl">
           <b>{COMPANY_SHORTNAME}</b>&apos;s home conference is ISCIT (International Symposium on
           Communications and Information Technologies), which started from 2001 in Thailand. Here is
           a comprehensive list of past ISCIT conferences held around the world:
         </p>
+      </section>
 
+      <section className="section-content">
         <table className="w-full table-auto border-collapse">
           <tbody>
             {sortedPastISCITs.map((event) => (

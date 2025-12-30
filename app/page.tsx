@@ -39,8 +39,8 @@ export default function HomePage() {
   return (
     <main className="main-page">
       <h1 className="page-title">Welcome to {COMPANY_NAME}</h1>
-      <section className="section">
-        <div className="text-lg md:text-xl ps-2 md:ps-5">
+      <section className="w-full max-w-7xl mx-auto mb-2 md:mb-5">
+        <div className="text-lg md:text-xl ms-2 md:ms-5">
           <b>
             {COMPANY_NAME} ({COMPANY_SHORTNAME}){" "}
           </b>{" "}

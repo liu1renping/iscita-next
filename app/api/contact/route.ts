@@ -21,15 +21,20 @@ export async function POST(request: Request) {
       to: `"${COMPANY_NAME}" <${COMPANY_EMAIL}>`,
       cc: email,
       replyTo: email,
-      subject: `Enquiry from ${name}: ${subject}`,
-      text: message,
+      subject: `Enquiry: ${subject}`,
+      text: `
+From: ${name} (${email})
+Subject: ${subject}
+
+${message}
+`,
       html: `
 <h3>Enquiry: ${subject}</h3>
-      <p><strong>From:</strong> ${name} (${email})</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
+<p><strong>From:</strong> ${name} (${email})</p>
+<p><strong>Subject:</strong> ${subject}</p>
+<p><strong>Message:</strong></p>
+<p>${message.replace(/\n/g, "<br>")}</p>
+`,
     });
 
     return NextResponse.json({ success: true });
